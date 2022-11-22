@@ -58,8 +58,8 @@ def createpost():
 @login_required
 def allforums():
     posts = Post.query.all()
-
-    return render_template('allpost.html', user=current_user, posts=posts)
+    comments = Comment.query
+    return render_template('allpost.html', user=current_user, posts=posts, comments=comments)
 
 
 @views.route('/forums', methods=['GET', 'POST'])
